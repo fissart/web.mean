@@ -5,7 +5,7 @@ import path from 'path'
 // Models
 import User, { IUser } from '../1.models/1_User';
 //import Curse, { ICurse } from '../1.models/2_Curse';
-import Integer, { IInteger } from '../1.models/Integer';
+import Integer, { IInteger } from '../1.models/6_Integer';
 import Tasks, { ITask } from '../1.models/5_Task';
 
 //Usuarios unicamente sin anidaciones/////////////////////////////////////////////////////////////////////////
@@ -56,6 +56,26 @@ export async function getController(req: Request, res: Response): Promise<Respon
                 as: "curse",
             },
         },
+        {
+              $lookup: {
+                from: "integers",
+                let: { www: "$_id" },
+                pipeline: [
+                  { $match: { $expr: { $eq: ["$user", "$$www"] } } },
+                  {
+                        $lookup: {
+                          from: "curses",
+                          let: { wwwww: "$curse" },
+                          pipeline: [
+                             { $match: { $expr: { $eq: ["$_id", "$$wwwww"] } } },
+                          ],
+                          as: "curse",
+                        },
+                  }
+                ],
+                as: "integer",
+              },
+        }
     ]);
     return res.json(Curses);
 };

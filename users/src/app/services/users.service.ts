@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Www } from '../interfaces/Www'
 import { environment } from "../../environments/environment";
 
 @Injectable({
@@ -17,15 +16,15 @@ export class UsersService {
   //obtener usuario con opiniones
   getUser() {
   //console.log(localStorage.getItem('id'))
-    return this.http.get<Www>(`${this.URI}/Controller/${localStorage.getItem('id')}`);
+    return this.http.get<any>(`${this.URI}/Controller/${localStorage.getItem('id')}`);
   }
 
   getonly() {
-    return this.http.get<Www[]>(`${this.URI}/Controller`);
+    return this.http.get<any>(`${this.URI}/Controller`);
   }
 
   get() {
-    return this.http.get<Www[]>(`${this.URI}/ControllerAll/${localStorage.getItem('id')}`);
+    return this.http.get<any>(`${this.URI}/ControllerAll/${localStorage.getItem('id')}`);
   }
 
   registro(name: string, email: string, password: string, photo: File) {
@@ -44,7 +43,7 @@ export class UsersService {
 
   deletePhoto(id: string) {
     return this.http.delete(`${this.URI}/Controller/${id}`);
-  } 
+  }
 
   updatePhoto(id: string, title: string, description: string, password: string, rol: string, photo: File) {
     const fd = new FormData();
@@ -58,7 +57,7 @@ export class UsersService {
   }
 //URI_
   getOneUser(id: string) {
-    return this.http.get<Www>(`${this.URI}/Controller/${id}`);
+    return this.http.get<any>(`${this.URI}/Controller/${id}`);
   }
   createOpinion(user: string, imageid: string, value: string) {
     return this.http.post<any>(this.URI_ + '/opinion', { user, imageid, value });

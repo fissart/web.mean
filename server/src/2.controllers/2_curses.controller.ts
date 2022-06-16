@@ -5,7 +5,7 @@ import path from 'path'
 // Models
 import Curse, { ICurse } from '../1.models/2_Curse';
 import Tasks, { ITask } from '../1.models/5_Task';
-import Integer, { IInteger } from '../1.models/Integer';
+import Integer, { IInteger } from '../1.models/6_Integer';
 
 //getsController/////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////

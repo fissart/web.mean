@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from "../../environments/environment";
-import { Photo } from '../interfaces/Photo'
-import { Www } from '../interfaces/Www'
 
 @Injectable({
   providedIn: 'root'
@@ -51,20 +49,20 @@ console.log(id)
   }
 
   getPhoto(id: string) {
-    return this.http.get<Photo>(`${this.URIw}/${id}`);
+    return this.http.get<any>(`${this.URIw}/${id}`);
   }
 
     getPhotosUser(id: string) {
-    return this.http.get<Photo>(`${environment.apiURL}/api/curses/getsControllerUser/${id}`);
+    return this.http.get<any>(`${environment.apiURL}/api/curses/getsControllerUser/${id}`);
   }
 
 getUnity(id: string) {
-    return this.http.get<Photo>(`${this.URI}/${id}`);
+    return this.http.get<any>(`${this.URI}/${id}`);
   }
 
 
   getCurse(id: string) {
-    return this.http.get<Photo>(`${this.URI3}/${id}/${localStorage.getItem('id') || ""}`);
+    return this.http.get<any>(`${this.URI3}/${id}/${localStorage.getItem('id') || ""}`);
   }
 
 
@@ -103,7 +101,7 @@ updateUnity(id: string, title: string, description: string,  task: string,  test
 
 saveinteger(iduser:string,idcurso:string,iduserteach:string){
         //console.log(iduser, idcurso, iduserteach )
-        return this.http.post<Photo>(`${environment.apiURL}/api/integer/Controller`, {'curse':idcurso, 'user':iduser, 'userteach':iduserteach});
+        return this.http.post<any>(`${environment.apiURL}/api/integer/Controller`, {'curse':idcurso, 'user':iduser, 'userteach':iduserteach});
     }
 
 
@@ -119,11 +117,11 @@ saveinteger(iduser:string,idcurso:string,iduserteach:string){
 
 //URI2 = environment.apiURL + '/api/wwu'
   getPhotouser(iduser: string) {
-    return this.http.get<Photo>(`${this.URI2}/www/${iduser}`);
+    return this.http.get<any>(`${this.URI2}/www/${iduser}`);
   }
-  
+
   newscreate(iduser: string){
-          return this.http.post<Photo>(`${environment.apiURL}/api/news/Controller`, {'user':iduser, "title":"Title new", "description": `Este es un modelo de como puede escribir (formato html y css) en esta área borre todo y escriba<h1 class='bg-info text-success border p-1 rounded'>Titulo</h1>
+          return this.http.post(`${environment.apiURL}/api/news/Controller`, {'user':iduser, "title":"Title new", "description": `Este es un modelo de como puede escribir (formato html y css) en esta área borre todo y escriba<h1 class='bg-info text-success border p-1 rounded'>Titulo</h1>
           <h2 class='bg-info text-light border rounded text-success p-1'>Titulo</h2>
           <h3 class='bg-light border rounded text-success p-1'>Titulo</h3>
         <img class='bg-light p-1 m-auto'
@@ -143,7 +141,7 @@ saveinteger(iduser:string,idcurso:string,iduserteach:string){
       }
 
         Getnews(iduser: string){
-                return this.http.get<Photo>(`${environment.apiURL}/api/news/ControllerAll`);
+                return this.http.get<any>(`${environment.apiURL}/api/news/ControllerAll`);
             }
 
             newsupdate(newid: string, title: string, description: string,  show: string, filew:File) {

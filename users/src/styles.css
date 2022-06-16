@@ -27,7 +27,11 @@ color: white  !important;
 }
 
 .nav {
-  background: url(http://4everstatic.com/pictures/850xX/nature/landscapes/landscape-155469.jpg) center;
+  background: url("/assets/www.jpg") center;
+  /*
+background: url("https://st.depositphotos.com/1193964/3828/i/600/depositphotos_38287089-stock-photo-dark-purple-fractal-swirls-digital.jpg") repeat;
+*/
+
   background-size: cover;
   min-height: 10vh;
 }

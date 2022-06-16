@@ -1,7 +1,7 @@
 import { connect } from 'mongoose'
 
 export async function startConnection() {
-    const db = await connect('mongodb://localhost/fismart',{
+    const db = await connect('mongodb://localhost/arte',{
         useNewUrlParser: true,
         useFindAndModify: false,
         useUnifiedTopology: true

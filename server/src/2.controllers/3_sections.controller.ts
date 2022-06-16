@@ -4,7 +4,6 @@ import path from 'path'
 
 // Models
 import Curse, { ISection } from '../1.models/3_Section';
-import Opinion, { IOpinion } from '../1.models/Opinion';
 
 //getsController/////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -77,7 +76,7 @@ export async function getController(req: Request, res: Response): Promise<Respon
 export async function deleteController(req: Request, res: Response): Promise<Response> {
     const { ObjectId } = require("mongodb");
     const id = ObjectId(req.params.id);
-    await Opinion.deleteMany({ imageid: id });
+    //await Opinion.deleteMany({ imageid: id });
     const Curseww = await Curse.findByIdAndRemove(id) as ISection;
     //const Curse = await Curse.findByIdAndRemove(id) as ICurse;
     if (Curseww) {
