@@ -24,7 +24,7 @@ import  katex  from 'katex';
 export class AsignatureComponent implements OnInit {
     public loading!: string;
     public _value: number = 0;
-public DateNow! : string;
+    public DateNow! : string;
     get value(): number {
         return this._value;
     }
@@ -89,10 +89,10 @@ str = `"Euler\'s identity $e^{i\\pi}+1=0$ is a beautiful formula in $\\RR^2$. $$
     "tolerance": 0,
     "classes": {
       "initial": "animated",
-    "pinned": "bounceInDown",
-    "unpinned": "bounceOutUp"
-  }
-    };
+      "pinned": "bounceInDown",
+      "unpinned": "bounceOutUp"
+    }
+  };
 
 totalPages!: number;
   page: number = 1;
@@ -160,6 +160,7 @@ updatetask(idtask: string ) {
         this.routerr.navigate(['/task', idtask]);
         //localStorage.setItem("idunity", idunity)
     };
+
 deletetask(idtask: string ) {
         if (window.confirm('Desea eliminar la tarea de este tema?')) {
             this.themesService.deletetask(idtask)

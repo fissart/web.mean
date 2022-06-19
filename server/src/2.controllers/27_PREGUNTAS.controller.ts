@@ -14,7 +14,7 @@ export async function createController(req: Request, res: Response): Promise<Res
 };
 //getsController/////////////////////////////////////////////////////////////////////////
 export async function getsController(req: Request, res: Response): Promise<Response> {
-    const data = await Collection.find();
+    const data = await Collection.find({type: 'PREGUNTAS'});
     return res.json(data);
 }
 //getupdateController////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ export async function updateController(req: Request, res: Response): Promise<Res
                 console.error(err);
             }
         }
-        const update = await Collection.findByIdAndUpdate(id, { title, description, responce, foto: req.file.path });
+        const update = await Collection.findByIdAndUpdate(id, { title, description, responce, file: req.file.path });
     } else {
         const update = await Collection.findByIdAndUpdate(id, { title, description, responce });
     }

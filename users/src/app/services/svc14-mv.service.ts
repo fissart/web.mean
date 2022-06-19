@@ -11,14 +11,12 @@ export class Svc14MVService {
   constructor(private http: HttpClient) { }
 
 
-  save(task:string, theme:string, unidad:string, curse:string, user:string, filew:File) {
-      console.log(filew)
+  save(user:string ) {
       const fd = new FormData();
-      fd.append('title', task);
-      fd.append('description', theme);
+      fd.append('title', "Título");
+      fd.append('description', "Breve  descripción");
       fd.append('user', user);
-      fd.append('image', filew);
-      return this.http.post(`${environment.apiURL}/api/MV`, fd, { reportProgress: true, observe: "events" });
+      return this.http.post(`${environment.apiURL}/api/MV`, fd );
     }
 
   getupdate(user:any) {
@@ -26,15 +24,15 @@ export class Svc14MVService {
       return this.http.get<any>(`${environment.apiURL}/api/MV/${user}`);
     }
 
-  update(task:string, note:string, id: string, archivo: File) {
+  update(id: string, title:string, description:string, archivo: File) {
       const fd = new FormData();
-      fd.append('task', task);
-      fd.append('note', note);
+      fd.append('title', title);
+      fd.append('description', description);
       fd.append('image', archivo);
       return this.http.put(`${environment.apiURL}/api/MV/${id}`, fd, { reportProgress: true, observe: "events" });
     }
 
-  gets(user:string, curse: string ) {
+  gets() {
       return this.http.get<any>(`${environment.apiURL}/api/MV`);
     }
 

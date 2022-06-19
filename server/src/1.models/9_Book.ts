@@ -1,6 +1,8 @@
 ﻿import { Schema, model, Document } from 'mongoose'
 const schema = new Schema({
     title: String,
+    type: String,
+    subtype: String,
     autor: String,
     description: String,
     file: String,
@@ -12,6 +14,8 @@ const schema = new Schema({
 });
 export interface IBook extends Document {
     title: string,
+    type: string,
+    subtype: string,
     autor: string,
     description: string,
     file: string,

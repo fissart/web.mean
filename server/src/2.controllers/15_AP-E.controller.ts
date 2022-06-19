@@ -7,14 +7,14 @@ import Book, { IBook } from '../1.models/9_Book';
 export async function createController(req: Request, res: Response): Promise<Response> {
     const { title, description, user } = req.body;
     //console.log(req.body);
-    const newDate = { title, description, user, type: 'AP'};
+    const newDate = { title, description, user, type: 'APe'};
     const data = new Collection(newDate);
     await data.save();
     return res.json({ message: 'Ok create' });
 };
 //getsController/////////////////////////////////////////////////////////////////////////
 export async function getsController(req: Request, res: Response): Promise<Response> {
-    const data = await Collection.find();
+    const data = await Collection.find({type: 'APe'});
     return res.json(data);
 }
 //getupdateController////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ export async function updateController(req: Request, res: Response): Promise<Res
                 console.error(err);
             }
         }
-        const update = await Collection.findByIdAndUpdate(id, { title, description, responce, foto: req.file.path });
+        const update = await Collection.findByIdAndUpdate(id, { title, description, responce, file: req.file.path });
     } else {
         const update = await Collection.findByIdAndUpdate(id, { title, description, responce });
     }

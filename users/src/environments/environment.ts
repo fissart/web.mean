@@ -896,6 +896,7 @@ db.wwws.updateMany( { }, {$set:{'rol':'New MongoDB Tutorial', 'new2':'New MongoD
 ---------------------
 db.wwws.update( { '_id':ObjectId('623bcd104e6f90b190a6d1d8') }, {$set:{'rol':'New MongoDB Tutorial', 'new2':'New MongoDB Tutorial'}} )
 
+db.users.update( { 'name':'' }, {$set:{'rol':'1'}} )
 
 
 //eliminar un documento. Only one with ID
@@ -911,6 +912,9 @@ mongorestore --db fisart w1.json/fisart  //subir
 
 mongodump --out w1.json --db fismart --collection wwws --host localhost
 mongorestore --db namedatabase --collection namecollectionqueenviar w1.json/fisart //restaurar coleccion.
+
+
+
 
 
 */

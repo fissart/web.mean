@@ -4,7 +4,7 @@ import uuid from 'uuid/v4';
 
 // Settings
 const storage = multer.diskStorage({
-    destination: 'uploads/user',
+    destination: 'uploads/thesis',
     filename: (req, file, cb) => {
         cb(null, uuid() + path.extname(file.originalname))
     }

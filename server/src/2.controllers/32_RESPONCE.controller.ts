@@ -7,14 +7,14 @@ import Book, { IBook } from '../1.models/9_Book';
 export async function createController(req: Request, res: Response): Promise<Response> {
     const { idresponce, responce, user } = req.body;
     //console.log(req.body);
-    const newDate = { title, description, user, type: 'NOTAS'};
+      const newDate = { title, description, user, type: 'RESPONCE'};
     const data = new Responce(newDate);
     await data.save();
     return res.json({ message: 'Ok create' });
 };
 //getsController/////////////////////////////////////////////////////////////////////////
 export async function getsController(req: Request, res: Response): Promise<Response> {
-    const data = await Responce.find();
+    const data = await Responce.find({type: 'RESPONCE'});
     return res.json(data);
 }
 //getupdateController////////////////////////////////////////////////////////////////////

@@ -504,3 +504,4 @@ getnews(){
         moveItemInArray(this.photointeger, event.previousIndex, event.currentIndex);
     }
 }
+  

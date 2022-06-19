@@ -14,7 +14,7 @@ export async function createController(req: Request, res: Response): Promise<Res
 };
 //getsController/////////////////////////////////////////////////////////////////////////
 export async function getsController(req: Request, res: Response): Promise<Response> {
-    const data = await Collection.find();
+    const data = await Collection.find({type:"MV"});
     return res.json(data);
 }
 //getupdateController////////////////////////////////////////////////////////////////////
@@ -27,7 +27,6 @@ export async function getupdateController(req: Request, res: Response): Promise<
 export async function deleteController(req: Request, res: Response): Promise<Response> {
     const { ObjectId } = require("mongodb");
     const id = ObjectId(req.params.id);
-
     const File = await Collection.findByIdAndRemove(id) as ICollection;
     if (File) {
         try {
@@ -41,7 +40,8 @@ export async function deleteController(req: Request, res: Response): Promise<Res
 //updateController///////////////////////////////////////////////////////////////////////
 export async function updateController(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
-    const {  title, description, user, responce, author } = req.body;
+    const {  title, description } = req.body;
+    //console.log(req.file);
     const update = '';
     if (req.file) {
         const File = await Collection.findById(id) as ICollection;
@@ -52,9 +52,9 @@ export async function updateController(req: Request, res: Response): Promise<Res
                 console.error(err);
             }
         }
-        const update = await Collection.findByIdAndUpdate(id, { title, description, responce, foto: req.file.path });
+        const update = await Collection.findByIdAndUpdate(id, { title, description, file: req.file.path });
     } else {
-        const update = await Collection.findByIdAndUpdate(id, { title, description, responce });
+        const update = await Collection.findByIdAndUpdate(id, { title, description });
     }
     return res.json({
         message: 'Successfully updated'
