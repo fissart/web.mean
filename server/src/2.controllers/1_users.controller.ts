@@ -12,7 +12,7 @@ import Tasks, { ITask } from '../1.models/5_Task';
 ///////////////////////////////////////////////////////////////////////////
 
 export async function getSController(req: Request, res: Response): Promise<Response> {
-    const Curse = await User.find();
+    const Curse = await User.find({rol:'3'});
     return res.json(Curse);
 }
 

@@ -90,16 +90,15 @@
 
 <div class="container">
 <div class="row d-flex justify-content-center align-items-center bg-ligth">
-<button *ngIf="rol=='5' || rol=='1'" class="btn btn-info shadow-none mt-2  rounded-0" (click)="create()">Crear</button>
+<button *ngIf="rol=='5' || rol=='1'" class="btn btn-info shadow-none mt-2  rounded-0" (click)="create()">Solicitar</button>
 </div>
 </div>
 <div *ngIf="data.length!==0" class="container py-1 px-0">
 <div class="justify-content-center align-items-center bg-ligth">
-  <div class="p-2" *ngFor="let doc of data index as i">
+  <div class="p-2" *ngFor="let doc of data.slice().reverse(); index as i">
     <div class="card bg-light p-2">
         <span class="h3">{{doc.title}}</span>
           <ng-katex-html *ngIf="doc" [html]="doc.description"></ng-katex-html>
-
 <!--
         <div *ngIf="doc.file" class="p-0">
         <img *ngIf="doc.file.split('.').pop()=='png'||doc.file.split('.').pop()=='jpg'||doc.file.split('.').pop()=='jpeg'||doc.file.split('.').pop()=='svg'||doc.file.split('.').pop()=='webp'" [src]="apiUrl+'/'+ doc.file" class="img-fluid w-100" (error)="onImgError($event)">

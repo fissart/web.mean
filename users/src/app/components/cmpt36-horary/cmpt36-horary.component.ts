@@ -1,5 +1,5 @@
   import { Component, OnInit } from '@angular/core';
-  import { Svc16AUTORIDADESService } from '../../services/svc16-autoridades.service';
+  import { Svc36HORARYService } from '../../services/svc36-horary.service';
   import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   import { environment } from '../../../environments/environment';
   import { ActivatedRoute } from '@angular/router';
@@ -28,7 +28,7 @@
     constructor(
     private router: ActivatedRoute,
     private routerr: Router,
-    private Service: Svc16AUTORIDADESService,
+    private Service: Svc36HORARYService,
     private modal: NgbModal,
     ) { }
     capturandoFile(event: any) {

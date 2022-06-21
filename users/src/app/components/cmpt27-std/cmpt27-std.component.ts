@@ -17,6 +17,7 @@
     public loading!: string;
     public _value: number = 0;
     data: any = [];
+    datastd: any = [];
     public photoSelected!: string | ArrayBuffer | null;
     type!: string;
     name!: string;
@@ -71,6 +72,17 @@
     .subscribe(
     (res: any) => {
     this.data = res;
+    //console.log(res);
+    },
+    err => console.log(err)
+    )
+    }
+
+    getstdwww(){
+    this.Service.getstd()
+    .subscribe(
+    (res: any) => {
+    this.datastd = res;
     console.log(res);
     },
     err => console.log(err)
@@ -81,6 +93,7 @@
     this.router.params.subscribe(params => {
     console.log(localStorage.getItem('idcurso') || "" )
     this.gets()
+    this.getstdwww()
     });
     }
 

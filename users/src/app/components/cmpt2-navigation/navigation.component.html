@@ -29,7 +29,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RESUMEN</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="/Cmpt14MVComponent">MISIÓN VISIÓN</a></li>
-                        <li><a class="dropdown-item" href="Cmpt15RHComponent">RESEÑA</a></li>
+                        <li><a class="dropdown-item" href="Cmpt15RHComponent">RESEÑA HISTÓRICA</a></li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">INTEGRANTES</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/Cmpt16AUTORIDADESComponent">AUTORIDADES</a></li>
@@ -98,10 +98,10 @@
                       <li><a class="dropdown-item" href="/Cmpt35MESADEPARTESComponent">MESA DE PARTES</a></li>
                       <li><a class="dropdown-item" href="/Cmpt36HORARYComponent">HORARIO</a></li>
                       <li><a class="dropdown-item" href="/Cmpt37SILABOSComponent">SILABOS</a></li>
-                      <li><a class="dropdown-item" href="/Cmpt38NOTASComponent">NOTAS</a></li>
+                      <li><a class="dropdown-item" href="/Cmpt38NOTASComponent">BOLETA DE NOTAS</a></li>
                     </ul>
                 </li>
-                
+
                 <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/login">Iniciar sesión</a>

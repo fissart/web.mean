@@ -3,7 +3,7 @@ const schema = new Schema({
     title: String,
     type: String,
     subtype: String,
-    autor: String,
+    author: String,
     description: String,
     file: String,
     user: {
@@ -16,7 +16,7 @@ export interface IBook extends Document {
     title: string,
     type: string,
     subtype: string,
-    autor: string,
+    author: string,
     description: string,
     file: string,
     user: {

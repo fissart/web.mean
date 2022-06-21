@@ -3,18 +3,18 @@
 </div>
 
 <div class="py-5 mt-5"></div>
-   <div class="container">
-    <form class="card-body" (submit)="updatePhoto(title, description, password, rol)">
+   <div class="container d-flex justify-content-center align-items-center text-light">
+    <form class="border col-md-8 p-2" (submit)="updatePhoto(title, description, password, rol)">
         <div class="form-group mb-2">
-            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <label class="form-label">Nombre</label>
             <input type="text" class="form-control shadow-none" placeholder="Photo's Title" [value]="$any(photow).name" #title required>
         </div>
         <div class="form-group mb-2">
-            <label for="exampleFormControlInput1" class="form-label">Correo</label>
+            <label class="form-label">Correo</label>
             <input type="text" class="form-control shadow-none" placeholder="Photo's Title" [value]="$any(photow).email" #description required>
         </div>
         <div class="form-group mb-2">
-            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <label class="form-label">Password</label>
             <input type="text" class="form-control shadow-none" placeholder="Photo's Title" [value]="$any(photow).password" #password>
         </div>
         <!--

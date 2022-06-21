@@ -24,10 +24,12 @@ export class Svc23TESISService {
   return this.http.get<any>(`${this.URI}/${user}`);
   }
 
-  update(id: string, title:string, description:string, archivo: File) {
+  update(id: string, title:string, description:string, subtype:string, author:string, archivo: File) {
   const fd = new FormData();
   fd.append('title', title);
   fd.append('description', description);
+  fd.append('subtype', subtype);
+  fd.append('author', author);
   fd.append('image', archivo);
   return this.http.put(`${this.URI}/${id}`, fd, { reportProgress: true, observe: "events" });
   }

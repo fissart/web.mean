@@ -7,7 +7,7 @@ import Book, { IBook } from '../1.models/9_Book';
 export async function createController(req: Request, res: Response): Promise<Response> {
     const { title, description, user } = req.body;
     //console.log(req.body);
-    const newDate = { title, description, user, type: 'TESIS'};
+    const newDate = { title, description, user, author:"Autor", subtype:"TESIS", type: 'TESIS'};
     const data = new Book(newDate);
     await data.save();
     return res.json({ message: 'Ok create' });
@@ -41,7 +41,7 @@ export async function deleteController(req: Request, res: Response): Promise<Res
 //updateController///////////////////////////////////////////////////////////////////////
 export async function updateController(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
-    const {  title, description, user, responce, author } = req.body;
+    const {  title, description, user, responce, author, subtype } = req.body;
     const update = '';
     if (req.file) {
         const File = await Book.findById(id) as IBook;
@@ -52,9 +52,9 @@ export async function updateController(req: Request, res: Response): Promise<Res
                 console.error(err);
             }
         }
-        const update = await Book.findByIdAndUpdate(id, { title, description, responce, file: req.file.path });
+        const update = await Book.findByIdAndUpdate(id, { title, description, subtype, author, file: req.file.path });
     } else {
-        const update = await Book.findByIdAndUpdate(id, { title, description, responce });
+        const update = await Book.findByIdAndUpdate(id, { title, description, subtype, author });
     }
     return res.json({
         message: 'Successfully updated'

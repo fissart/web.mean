@@ -12,7 +12,7 @@ export class Svc37SILABOSService {
 
   save(user:string ) {
   const fd = new FormData();
-  fd.append('title', "Título");
+  fd.append('title', "Silabo");
   fd.append('description', "Breve  descripción");
   fd.append('user', user);
   return this.http.post(`${this.URI}`, fd );

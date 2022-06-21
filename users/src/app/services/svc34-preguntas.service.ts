@@ -14,7 +14,7 @@ export class Svc34PREGUNTASService {
 
   save(user:string ) {
   const fd = new FormData();
-  fd.append('title', "Título");
+  fd.append('title', "Pregunta");
   fd.append('description', "Breve  descripción");
   fd.append('user', user);
   return this.http.post(`${this.URI}`, fd );

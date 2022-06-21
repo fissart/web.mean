@@ -4,7 +4,10 @@
 @import '~swiper/modules/pagination/pagination.min.css';
 
 body{
-background-image: linear-gradient(to left, #11294e, #004469, #005f7d, #007b89, #0a968e);
+background: url("/assets/www.jpg");
+background-size: 100%;
+min-height: 10vh;
+  background-attachment: fixed;
 }
 
 .cursorpoint{
@@ -27,7 +30,7 @@ color: white  !important;
 }
 
 .nav {
-  background: url("/assets/negz.jpg") center;
+  background: url("/assets/nav.jpg") center;
   /*
 background: url("https://st.depositphotos.com/1193964/3828/i/600/depositphotos_38287089-stock-photo-dark-purple-fractal-swirls-digital.jpg") repeat;
 */
@@ -209,6 +212,8 @@ blockquote {
     height: 81px;
     overflow: hidden;
     border-radius: 50%;
+    border: solid 1px white;
+        box-shadow: 0 0px 5px rgba(0, 0, 0, 0.596);
     object-fit: cover;
 }
 
@@ -305,7 +310,7 @@ blockquote {
     /*wobble flip bounce pulse referring directly to the animation's @keyframe declaration */
     animation-duration: .1s;
       box-shadow: 0 3px 5px rgba(0,0,0,0.5);
-    background-color:rgb(153,102,153);
+    background-color:rgb(153,52,53);
 }
 .cardnew_ {
     position: relative;
@@ -387,7 +392,7 @@ background: url(https://cdn.elnacional.com/wp-content/uploads/2021/12/Poesia-fra
 
 .floatop {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     border-radius: .5em;
     width: 95%;
