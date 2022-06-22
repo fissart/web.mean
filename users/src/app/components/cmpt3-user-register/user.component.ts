@@ -101,7 +101,7 @@ export class UserComponent implements OnInit {
             );
         return false;
     }else{
-            alert("Escriba su DNI de 8 digitos, ejemplo: 12345678@fismart.cf y passwor=DNI")
+            alert("Escriba su DNI de 8 digitos, ejemplo: 12345678@esfapa.edu.pe y passwor=DNI")
                     return true;
             }
 

@@ -99,7 +99,7 @@ export async function createController(req: Request, res: Response): Promise<Res
             user: { "msg": "El usuario ya esta registrado" }
         });
 
-    const newCurse = { name, email, password, rol: "3", foto };
+    const newCurse = { name, email, password, rol: "new_user", foto };
     const user = new User(newCurse);
     await user.save();
 

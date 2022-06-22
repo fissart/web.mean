@@ -26,11 +26,11 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RESUMEN</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NOSOTROS</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="/Cmpt14MVComponent">MISIÓN VISIÓN</a></li>
                         <li><a class="dropdown-item" href="Cmpt15RHComponent">RESEÑA HISTÓRICA</a></li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">INTEGRANTES</a>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">DIRECTORIO</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/Cmpt16AUTORIDADESComponent">AUTORIDADES</a></li>
                                 <li><a class="dropdown-item" href="/Cmpt17ADMINISTRATIVOSComponent">ADMINISTRATIVOS</a></li>
@@ -52,7 +52,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CARRERAS</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="/Cmpt19EDUCACIONComponent">EDUCACION</a></li>
@@ -68,7 +68,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REPO</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REPOSITORIO</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item" href="/Cmpt24BIBLIOTECAComponent">BIBLIOTECA</a></li>
                         <li><a class="dropdown-item" href="/Cmpt23TESISComponent">TESIS</a></li>
@@ -101,19 +101,33 @@
                       <li><a class="dropdown-item" href="/Cmpt38NOTASComponent">BOLETA DE NOTAS</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OTROS ACCESOS</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="/Cmpt19EDUCACIONComponent">EDUCACION</a></li>
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">ARTISTA PROFESIONAL</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Cmpt20APPComponent">PINTURA</a></li>
+                            <li><a class="dropdown-item" href="/Cmpt21APGComponent">GRABADO</a></li>
+                            <li><a class="dropdown-item" href="/Cmpt22APEComponent">ESCULTURA</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
 
                 <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/login">Iniciar sesión</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/registro">Registro</a>
+                        <a class="nav-link" routerLink="/registro">Registrarse</a>
                     </li>
 
                 </ng-container>
                 <ng-template #loggedIn>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/">Cursos</a>
+                        <a class="nav-link" routerLink="/">PLATAFORMA</a>
                     </li>
                     <li *ngIf='idcurso' class="nav-item">
                         <a class="nav-link" routerLink="/curso/{{idcurso}}">Curso</a>
