@@ -4,10 +4,10 @@
 @import '~swiper/modules/pagination/pagination.min.css';
 
 body{
-background: url("/assets/w_5.svg");
+background: url("/assets/negz.jpg");
 background-size: 100%;
 min-height: 10vh;
-  background-attachment: fixed;
+background-attachment: fixed;
 }
 
 .cursorpoint{

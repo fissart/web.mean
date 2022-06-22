@@ -23,6 +23,7 @@
     "@angular/router": "~12.2.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "@types/swiper": "^6.0.0",
+    "angular-cli-ghpages": "^1.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.2",
     "headroom.js": "^0.12.0",

@@ -1,4 +1,4 @@
-<nav class="nav navbar smart-scroll navbar-expand-md">
+<nav class="nav navbar smart-scroll navbar-expand-xl">
     <div class="container-fluid">
         <ng-container *ngIf="!authService.loggedIn(); else loggedInw">
             <a class="navbar-brand my-3 text-light" routerLink="/">
@@ -18,7 +18,7 @@
 
         </ng-template>
         <button class="navbar-toggler btn btn-light bg-warning shadow-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02">
-            <mat-icon color='white' svgIcon="www" aria-hidden="false" aria-label=""></mat-icon>
+            <mat-icon color='white' svgIcon="www" aria-hidden="false"></mat-icon>
         </button>
 
         <div class="collapse navbar-collapse  justify-content-end" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
