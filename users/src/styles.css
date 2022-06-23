@@ -4,12 +4,18 @@
 @import '~swiper/modules/pagination/pagination.min.css';
 
 body{
+  background: linear-gradient(to bottom, rgb(20,50,70), gray);
+/*
 background: url("/assets/negz.jpg");
+*/
 background-size: 100%;
 min-height: 10vh;
 background-attachment: fixed;
 }
 
+.height{
+  margin-top: 8em;
+}
 .cursorpoint{
   cursor: pointer;
 }
@@ -30,8 +36,9 @@ color: white  !important;
 }
 
 .nav {
-  background: url("/assets/nav.jpg") center;
+  background: linear-gradient(to bottom, blue, rgb(20,5,50));
   /*
+  background: url("/assets/nav.jpg") center;
 background: url("https://st.depositphotos.com/1193964/3828/i/600/depositphotos_38287089-stock-photo-dark-purple-fractal-swirls-digital.jpg") repeat;
 */
 
@@ -215,6 +222,16 @@ blockquote {
     border: solid 1px white;
         box-shadow: 0 0px 5px rgba(0, 0, 0, 0.596);
     object-fit: cover;
+}
+
+.wrapperest12 {
+    /*transform: translate(-50%, -50%);
+    top: 100%;
+    left: 3em;
+    */
+    position: relative;
+    width: 45px;
+    height: 69px;
 }
 
 .wrapperest5 {

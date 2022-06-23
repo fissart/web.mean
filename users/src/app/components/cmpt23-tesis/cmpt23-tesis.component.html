@@ -1,7 +1,7 @@
 <div Ngxheadroom   [options]="options" class="fixed-navbar">
     <app-navigation></app-navigation>
 </div>
-<div class="py-5"></div>
+<div class="height"></div>
 
 <ng-template #ww let-modal>
   <form class="container p-3" (submit)="updatenews(_title, description, _author)">
@@ -117,10 +117,10 @@
         <span class="h3">{{doc.title}}</span>
           <ng-katex-html *ngIf="doc" [html]="doc.description"></ng-katex-html>
 
-<!--
         <div *ngIf="doc.file" class="p-0">
         <img *ngIf="doc.file.split('.').pop()=='png'||doc.file.split('.').pop()=='jpg'||doc.file.split('.').pop()=='jpeg'||doc.file.split('.').pop()=='svg'||doc.file.split('.').pop()=='webp'" [src]="apiUrl+'/'+ doc.file" class="img-fluid w-100" (error)="onImgError($event)">
         <div class="border rounded">{{img}}</div>
+        <!--
         <ngx-doc-viewer *ngIf="doc.file.split('.').pop()=='doc'"
         [url]="apiUrl+'/'+ doc.file"
         viewer="google"
