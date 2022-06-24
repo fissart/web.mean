@@ -43,7 +43,7 @@ const _31_NOTAS_route_1 = __importDefault(require("./3.routes/31_NOTAS.route"));
 // Initializations
 const app = express_1.default();
 // Settings
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8000);
 // Middlewares
 app.use(morgan_1.default('dev'));
 app.use(cors_1.default());

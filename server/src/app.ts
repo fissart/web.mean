@@ -42,7 +42,7 @@ import NOTAS from './3.routes/31_NOTAS.route'
 // Initializations
 const app: Application = express();
 // Settings
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8000);
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors());
