@@ -98,11 +98,12 @@
   <div class="p-2" *ngFor="let doc of data index as i">
       <div class="cardnew border text-light p-2">
         <span class="h3">{{doc.title}}</span>
+        <div *ngIf="doc.file" class="p-0 text-center">
+        <img *ngIf="doc.file.split('.').pop()=='png'||doc.file.split('.').pop()=='jpg'||doc.file.split('.').pop()=='jpeg'||doc.file.split('.').pop()=='svg'||doc.file.split('.').pop()=='webp'" [src]="apiUrl+'/'+ doc.file" class="img-fluid w-70" (error)="onImgError($event)">
+      </div>
           <ng-katex-html *ngIf="doc" [html]="doc.description"></ng-katex-html>
-
 <!--
         <div *ngIf="doc.file" class="p-0">
-        <img *ngIf="doc.file.split('.').pop()=='png'||doc.file.split('.').pop()=='jpg'||doc.file.split('.').pop()=='jpeg'||doc.file.split('.').pop()=='svg'||doc.file.split('.').pop()=='webp'" [src]="apiUrl+'/'+ doc.file" class="img-fluid w-100" (error)="onImgError($event)">
         <div class="border rounded">{{img}}</div>
         <ngx-doc-viewer *ngIf="doc.file.split('.').pop()=='doc'"
         [url]="apiUrl+'/'+ doc.file"
@@ -126,7 +127,7 @@
       <button *ngIf="rol=='5' || rol=='1'" class="btn btn-danger shadow-none rounded-0" (click)="delete(doc._id)">Eliminar</button>
       <button *ngIf="rol=='5' || rol=='1'" class="btn btn-info shadow-none rounded-0" (click)="open1(ww, doc._id, doc.title, doc.description, doc.file)">Editar
       </button>
-      <button class="btn btn-warning shadow-none rounded-0" (click)="open2(w, doc._id, doc.title, doc.description, doc.file)">Archivo</button>
+      <button class="btn btn-warning shadow-none rounded-0" (click)="open2(w, doc._id, doc.title, doc.description, doc.file)">Show</button>
      </div>
     </div>
   </div>

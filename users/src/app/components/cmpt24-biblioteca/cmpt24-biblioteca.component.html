@@ -115,9 +115,9 @@
 </div>
 </div>
 <div *ngIf="data.length!==0" class="container py-1 px-0">
-<div class="justify-content-center align-items-center bg-ligth">
-  <div class="p-2" *ngFor="let doc of data index as i">
-      <div class="cardnew border text-light p-2">
+<div class="row justify-content-center align-items-center bg-ligth">
+  <div class="p-2 col-md-4" *ngFor="let doc of data index as i">
+      <div class="cardnew text-light p-2">
         <span class="h3">{{doc.title}}</span>
           <ng-katex-html *ngIf="doc" [html]="doc.description"></ng-katex-html>
 <!--
@@ -141,12 +141,12 @@
 
       </div>
 -->
-    <div  class="p-0">
+    <div  class="p-0 text-center">
 
       <button *ngIf="rol=='5' || rol=='1'" class="btn btn-danger shadow-none rounded-0" (click)="delete(doc._id)">Eliminar</button>
       <button *ngIf="rol=='5' || rol=='1'" class="btn btn-info shadow-none rounded-0" (click)="open1(ww, doc._id, doc.title, doc.description, doc.file, doc.subtype, doc.author)">Editar
       </button>
-      <button class="btn btn-warning shadow-none rounded-0" (click)="open2(w, doc._id, doc.title, doc.description, doc.file)">Archivo</button>
+      <button class="btn btn-warning shadow-none rounded-0" (click)="open2(w, doc._id, doc.title, doc.description, doc.file)">Show</button>
      </div>
     </div>
   </div>

@@ -32,7 +32,7 @@
         </ng-container>
         <ng-template #loggedInw>
 
-            <a class="navbar-brand p-0" routerLink="/user/{{photo._id}}">
+            <a *ngIf="photo" class="navbar-brand p-0" routerLink="/user/{{photo._id}}">
                 <img *ngIf="isCollapsed" [src]="apiUrl+'/'+ photo.foto" (error)="onImgError($event)" class="wrapperest10">
             </a>
 
@@ -165,9 +165,12 @@
                     <li *ngIf='idcurso' class="nav-item">
                         <a class="nav-link" routerLink="/integers/{{idcurso}}">Estudiantes</a>
                     </li>
-                    <li *ngIf='photo.rol=="2" || photo.rol=="1"' class="nav-item">
+                    <span *ngIf="photo">
+
+                    <li *ngIf='photo.rol==2 || photo.rol==1' class="nav-item">
                         <a class="nav-link" routerLink="/user">Docente</a>
                     </li>
+                  </span>
                     <li class="nav-item">
                         <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Cerrar sesión</a>
                     </li>
